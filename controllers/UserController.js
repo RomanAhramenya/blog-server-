@@ -8,6 +8,7 @@ export const registerController = async (req, res) => {
     const hash = await bcrypt.hash(password, salt);
 
     const doc = new UserModel({
+      role:'USER',
       name: req.body.name,
       email: req.body.email,
       avatarURL: req.body.avatarURL,
